@@ -1,0 +1,16 @@
+{% extends 'base2.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+{% block title %}Logged out{% endblock %}
+{% block body %}
+ <h1>Logged out</h1>
+ <p>You have been successfully logged out. You can <a href="{% url 'account:login' %}"><button class="btn btn-primary "> log-in again</button></a></p>
+
+</body>
+</html>
+
+{% endblock body %}

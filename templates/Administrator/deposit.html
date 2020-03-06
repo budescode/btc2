@@ -1,0 +1,164 @@
+{% extends 'Administrator/base.html' %}
+{% load staticfiles %}
+
+
+{% block body %}
+<body>
+  <section id="container">
+    <!-- **********************************************************************************************************************************************************
+        TOP BAR CONTENT & NOTIFICATIONS
+        *********************************************************************************************************************************************************** -->
+    <!--header start-->
+{% include 'Administrator/header.html' %}
+    <!--header end-->
+    <!-- **********************************************************************************************************************************************************
+        MAIN SIDEBAR MENU
+        *********************************************************************************************************************************************************** -->
+    <!--sidebar start-->
+{% include 'Administrator/sidebar.html' %}
+    <!--sidebar end-->
+    <!-- **********************************************************************************************************************************************************
+        MAIN CONTENT
+        *********************************************************************************************************************************************************** -->
+    <!--main content start-->
+    <section id="main-content">
+      <section class="wrapper">
+        <div class="row">
+          <div class="col-lg-12 main-chart">
+
+
+
+          </div>
+          <!-- /col-lg-9 END SECTION MIDDLE -->
+          <!-- **********************************************************************************************************************************************************
+              RIGHT SIDEBAR CONTENT
+              *********************************************************************************************************************************************************** -->
+
+        </div>
+        <!-- /row -->
+
+
+<div class="row">
+
+
+<!--      <div class="col-md-3">-->
+<!--<div class="alert alert-success">-->
+<!--  <strong>Personal Information</strong>-->
+
+
+<!--</div>-->
+
+<!--<div class="well well-sm">  <strong>Username:</strong> {{request.user.username}} <br><hr>-->
+<!--<strong>Date Joined:</strong> {{request.user.date_joined}} <br><hr>-->
+<!--<strong>Last Access:</strong> {{request.user.last_login}} <br><hr>-->
+
+<!--</div>-->
+
+
+
+
+<!--  </div>-->
+
+
+
+
+
+              <div class="col-md-6 col-sm-12 mb">
+                <!-- REVENUE PANEL -->
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+
+                    <div class="well well-sm well-success" style=''> Make a deposit</div>
+                    <div class="well well-lg well-success" style='background-color:green; color:white;'> BASIC PACKAGE 30% DAILY <span class='pull-right'>$250.00 - $999.00 <br>
+                    DAILY PROFIT(%):$140.00</span></div>
+
+<div class="well well-lg well-success" style='background-color:green; color:white;'> BUSINESS PACKAGE 15% DAILY <span class='pull-right'>$1000.00 - $9999.00 <br>
+DAILY PROFIT(%):$210.00</span></div>
+
+<div class="well well-lg well-success" style='background-color:green; color:white;'> PROFESSIONAL PACKAGE 20% DAILY <span class='pull-right'>$10000.00 - $50000.00 <br>
+DAILY PROFIT(%):$350.00</span></div>
+
+
+<div>
+    <span>Investment Plan</span>
+    <hr>
+<form method='POST' action='{% url 'administrator:depositnext' %}'> {% csrf_token %}
+    <div class="form-group">
+  <label for="sel1">Select Plan:</label>
+  <select class="form-control" id="sel1" name='package'>
+    <option>BASIC PACKAGE 30% DAILY</option>
+    <option>BUSINESS PACKAGE 15% DAILY</option>
+    <option>PROFESSIONAL PACKAGE 20% DAILY</option>
+
+  </select>
+  <br>
+  <input type='submit' class='btn btn-primary' value='Next'>
+</div>
+</div>
+</form>
+
+
+
+                </div>
+
+                </div>
+              </div>
+
+
+
+
+
+<!--  <div class="col-md-3">-->
+<!--<div class="alert alert-success">-->
+<!--  <strong>Account Overview</strong>-->
+<!--</div>-->
+<!--<div class="well well-sm">  <strong>Available Balance:</strong>  <br><hr>-->
+<!--<strong>Profit Margin:</strong> <br><hr>-->
+<!--<strong>Active Investments:</strong> <br><hr>-->
+<!--<strong>Pending Withdraw:</strong> <br><hr>-->
+
+<!--</div>-->
+
+
+<!--  </div>-->
+
+</div>
+<!-- end of row -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </section>
+    </section>
+    <!--main content end-->
+
+  </section>
+  <!-- js placed at the end of the document so the pages load faster -->
+
+
+
+
+{% endblock body %}
+
+</body>
+
+</html>

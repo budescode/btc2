@@ -1,0 +1,114 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <title>BTC</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'home/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'home/vendors/fontawesome/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'home/vendors/owl-carousel/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'home/vendors/animate-css/animate.css' %}">
+    <!-- main css -->
+    <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/responsive.css' %}">
+</head>
+<body>
+
+    <!--================Header Menu Area =================-->
+    <header class="header_area">	
+        <div class="main_menu">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <!-- <a class="navbar-brand logo_h" href="index.html"><img src="img/logo.png" alt=""></a> -->
+                    <a href="index.html" style="font-size: 25px;color: white;font-family: bold;">BTC</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav menu_nav ml-auto">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li> 
+                            <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li> 
+                            <li class="nav-item"><a class="nav-link" href="contact.html">Pricing</a></li> 
+                            <li class="nav-item"><a class="nav-link" href="{% url 'account:login' %}">Login</a></li> 
+                            <li class="nav-item"><a class="nav-link" href="{% url 'account:register' %}">Register</a></li> 
+
+                        </ul>
+                    </div>
+<!--                     <div class="right-button">
+                        <ul>
+                            <li class="shop-icon"><a href="#"><i class="ti-shopping-cart-full"></i><span>0</span></a></li>
+                            <li><a class="sign_up" href="">Sign Up</a></li>
+                        </ul>
+                    </div>  -->
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!--================Header Menu Area =================-->
+
+
+    {% block body %}
+
+    {% endblock %}
+
+
+     <!-- ================ start footer Area ================= -->
+    <footer class="footer-area">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-3 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
+                    <h4>BTC</h4>
+                    
+                    <p>All Mining activity on this website is provided by BTC Crypto Miner Limited. Payments are processed with the assistance of Tifiya Group s.r.o., which is registered as BTC Crypto Miner Limited's agent in the EU. […]</p>
+                    <div class="footer-logo">
+                       © 2019 BTC | All rights Reserved
+                    </div>
+                </div>
+
+
+                <div class="col-lg-3 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
+                    <h4>Send us email</h4>
+                    <ul>
+                        <li><a href="#">enquiry@btc.com</a></li>
+                        
+                    </ul>
+                </div>
+
+
+        </div>
+
+    </div>
+</footer>
+<!-- ================ End footer Area ================= -->
+
+
+
+
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="{% static 'home/js/jquery-2.2.4.min.js' %}"></script>
+<script src="{% static 'home/js/popper.js' %}"></script>
+<script src="{% static 'home/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'home/vendors/owl-carousel/owl.carousel.min.js' %}"></script>
+<script src="{% static 'home/js/jquery.ajaxchimp.min.js' %}"></script>
+<script src="{% static 'home/js/waypoints.min.js' %}"></script>
+<script src="{% static 'home/js/mail-script.js' %}"></script>
+<script src="{% static 'home/js/contact.js' %}"></script>
+<script src="{% static 'home/js/jquery.form.js' %}"></script>
+<script src="{% static 'home/js/jquery.validate.min.js' %}"></script>
+<script src="{% static 'home/js/mail-script.js' %}"></script>
+<script src="{% static 'home/js/theme.js' %}"></script>
+</body>
+</html>

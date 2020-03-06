@@ -1,0 +1,61 @@
+   {% load staticfiles %}
+    <aside>
+      <div id="sidebar" class="nav-collapse ">
+        <!-- sidebar menu start-->
+        <ul class="sidebar-menu" id="nav-accordion">
+          <!--<p class="centered"><a href=""><img src="{% static 'administrator/img/fr-05.jpg' %}" class="img-circle" width="80"></a></p>-->
+          <h5 class="centered">{{request.user.username}}</h5>
+          <li class="mt">
+            <a class="" href="{% url 'administrator:administrator' %}">
+              <i class="fa fa-home"></i>
+              <span>Home</span>
+              </a>
+          </li>
+
+
+        <li class="mt">
+        <a class="" href="{% url 'administrator:deposit' %}">
+        <i class="fa fa-dashboard"></i>
+        <span>Deposit</span>
+        </a>
+        </li>
+
+        <li class="mt">
+        <a class="" href="{% url 'administrator:investment' %}">
+        <i class="fa fa-money"></i>
+        <span>Investment</span>
+        </a>
+        </li>
+        <li class="mt">
+        <a class="" href="">
+        <i class="fa fa-plane"></i>
+        <span>Withdraw</span>
+        </a>
+        </li>
+
+        <li class="mt">
+        <a class="" href="{% url 'home:home' %}">
+        <i class="fa fa-sign-out"></i>
+        <span>Logout</span>
+        </a>
+        </li>
+<li class="mt">
+        <a class="" href="{% url 'account:settings' %}">
+        <i class="fa fa-sign-out"></i>
+        <span>Settings</span>
+        </a>
+        </li>
+<li class="mt">
+        <a class="" href="{% url 'administrator:contact' %}">
+        <i class="fa fa-sign-out"></i>
+        <span>Support</span>
+        </a>
+        </li>
+
+        </ul>
+        <!-- sidebar menu end-->
+      </div>
+    </aside>
+
+
+<script src="{% static 'administrator/js/fetch.js' %}"></script>

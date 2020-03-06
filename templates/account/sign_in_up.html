@@ -1,0 +1,160 @@
+
+<!-- This part is critical -->
+
+{% load static %}
+<html lang="en-us"><head>
+    <style type="text/css">
+        body{
+            background-image:url("{% static 'images/background.jpg' %}");
+            background-repeat:no-repeat;
+            background-size:cover;
+            background-position:center;
+            background-attachment: fixed;
+
+            }
+    </style>
+   <link rel= 'shortcut icon' href="{% static 'images/check3.jpg' %}">
+    <title>{{title}} | {{name}}</title>
+   <!--  link for real fontb awesome -->
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <!-- // -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+  
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{title}} | {{name}}</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/loginmain.css' %}">
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/mystyle.css' %}">
+   
+    <link href="https://fonts.googleapis.com/css?family=Days+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Share" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+</head>
+<body>
+    <section id="log">
+    <div class="container">
+    <div class="rowCo">
+    <div class="ctd">
+    <div align="middle">
+        <img src="{% static 'images/mylogo.png' %}" width="175" height="100" style="border-width:5px;border-color: inherit;border-top-right-radius: 22px;border-bottom-left-radius: 22px;box-shadow: 5px 10px 5px 5px #888888;" class="img-responsive" >
+    </div>
+    <h1 class="ctdh1">{{name}}</h1>
+     <!--  My horizontal rule -->
+    <div id="myhr"><hr style="height: 5px;background: rgb(0, 250, 154);"></div>
+    <div id="myhrnew" style="display: none"><hr style="height: 5px;background:#FF3030;"></div>
+
+<!--  //My horizontal rule -->
+     <style type="text/css">
+         li{
+            list-style-type: none;
+         }
+     </style>
+   <!--  <button type="button" onclick="update_url('/signup/')">Click 0000</button> -->
+    <form method="post" id="myLoginForm">
+                                {% csrf_token %}
+                                <span style="font-family:italic;"  id="hellothere"></span>
+                                <span style="font-family:italic;"  id="minuser"></span>
+                                <span style="font-family:italic;"  id="minuser2"></span>
+                                <span style="font-family:italic;"  id="userthere"></span>
+                                <span style="font-family:italic;"  id="passthere"></span>
+                                {% if form.non_field_errors %}
+                                <div class="alert alert-danger" role="alert">
+                                <marquee><span style="font-family:italic;">{{form.non_field_errors}}</span></marquee>
+                                </div>
+                                {% endif %}
+
+                                <!-- {{form.username}}  --> 
+
+                                <label class="sr-only" for="exampleInputAmount"></label>
+                                <div class="input-group">
+                                <div class="input-group-addon"><i class="fa fa-user-o" aria-hidden="true"></i>
+                                </div>
+
+                                <input  class="input-one" id="myusername" name="username" style="background-color:#00FA9A; color:white; font-weight: bold;"  placeholder="user or email" type="text" autocomplete="on">
+                                <div class="input-group-addon">
+                                <i class="fa fa fa-user-o fa-spin fa-3x fa-fw" id="AB" style="display: none; font-size: 14px;"></i>
+                                <span class="sr-only">Loading...</span>
+                                {% if  form.non_field_errors %}
+                                <i class="fa fa-minus-square" id="BC" aria-hidden="true" style="color: #B22222;"></i>
+                                {% endif %}
+
+
+
+
+                                </div>
+
+                                </div>
+
+
+                                <hr>
+
+
+                                <label class="sr-only" for="exampleInputAmount"></label>
+                                <div class="input-group">
+                                <div class="input-group-addon"><i class="fa fa-key" aria-hidden="true"></i>
+                                </div>
+
+                                <input  class="input-one" id="mypassword" name="password" style="background-color:#00FA9A; color:white; font-weight: bold;"  placeholder="password" type="password" autocomplete="on">
+                                <div class="input-group-addon">
+                                <i class="fa fa fa-key fa-spin fa-3x fa-fw" id="CD" style="display: none; font-size: 14px;"></i>
+                                <span class="sr-only">Loading...</span>
+                                {% if  form.non_field_errors %}
+                                <i class="fa fa-minus-square" id="DE" aria-hidden="true" style="color: #B22222;"></i>
+                                {% endif %}
+
+
+
+
+                                </div>
+
+                                </div>
+
+                                <a href="#"><p class="ctdp1">Forgot password?</p>
+                                <a href="#" class="alog">
+                                <!-- <div class="logdiv top15" type="submit" >Login</div> -->
+                                </a></a>
+                                <!-- <button type="button" onclick="window.location.href='/signup/' ">Click to Sign Up</button> -->
+                                <button  class="logdiv top15 btn btn-lg btn-block" type="submit">Login</button>
+
+        </form>
+            <style type="text/css">
+                .myown{
+                font-family: 'Share', cursive;
+                color: #666666;
+                text-align: center;
+                font-weight: bold;
+                cursor: pointer;
+                }
+                .myown:hover{
+                text-decoration: underline;
+                }
+            </style>
+        <p class="ctdp2">Have not an account yet?</p>
+        <p class="myown" title="click to sign up instead" onclick="window.location.href='/signup/'">Sign up
+        </p>
+        </div>
+  </section>
+    <footer class="footer">
+    <div class="ctdp4 top1" style="color:black;font-weight:bold;">Copyright ® 2018 {{name}} all rights reserved.</div></footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+
+   <script src="{% static 'js/logmain.js' %}"></script>
+   <script src="{% static 'js/mycustomm_javascript.js' %}"></script>
+   
+</body>
+</html>

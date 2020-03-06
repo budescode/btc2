@@ -1,0 +1,108 @@
+{% extends 'home/base.html' %}
+{% block body %}
+
+    <!--================Home Banner Area =================-->
+    <section class="home_banner_area">
+        <div class="banner_inner d-flex align-items-center">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                                
+                            <h1 style="color: white">Profit Straight To Your Wallet.</h1>
+                            <p style="color: white">Cryptocurrency mining pool trusted by more than 3.500.000 users worldwid</p>
+
+                            <p style="color: white">
+                            BTCCryptominer.com is an international investment entity that has been officially registered in Great Britain on November 2015. It was created by a group of professional traders and skilled analysts with valuable expertise especially in stock market and extensive practical experiences of combined knowledge and capabilities to allow for participation in the market within a non-risk investment environment.</p>
+
+                            
+
+                             <a class="banner_btn" href="#">Start Mining<i class="ti-arrow-right"></i></a>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="banner_content">
+                           <!--  <h4 style="font-size: 30px;">Concept And Planning<br/>MySME Startup</h4> -->
+       <!--  <div class="col-md-6 col-lg-6" id="backgroundimg" style="background-image: url('./static/img/background2.jpg'); color: white; height: 350px;"> -->
+        <h6>Last Updated: {{updated}}</h6>
+        <h4 style="color: white;">BTC:</h4>
+        <h6 style="color: white;">&#36;: {{dollarrate}}</h6>
+        <h6 style="color: white;">&pound;: {{poundrate}}</h6>
+        <h6 style="color: white;">&euro;: {{eurorate}}</h6>
+        <br>
+
+        
+        <!-- <h4>LATEST </h4> -->
+        <div style="height: 200px; overflow-x: scroll;">
+        <h4 style="color: white; font-weight: bold">LATEST HEADLINES</h4>
+        {% for i in newslist %}
+        <img src="{{i.image}}" style="height: 50px; width: 50px;" alt="image">
+        <span style="color: white">{{i.title}}</span> <br><br>
+        {% endfor %}
+
+        </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================End Home Banner Area =================-->
+
+    <!--================Service  Area =================-->
+    <section class="service-area area-padding">
+        <div class="container">
+            <div class="row">
+                <!-- Single service -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="single-service">
+                        <div class="service-icon">
+                            <i class="ti-pencil-alt"></i>
+                        </div>
+                        <div class="service-content">
+                            <h5>Fast and secure withdraw</h5>
+                            <p>We process all withdrawal requests within 24 hours and without any fee. You can make as many requests as you want without minimum withdrawal amount.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single service -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="single-service">
+                        <div class="service-icon">
+                            <i class="ti-image"></i>
+                        </div>
+                        <div class="service-content">
+                            <h5>24/7 customer support</h5>
+                            <p>We provide unbeatable support via email and phone to cater your needs and get a professional, fast and effectively response.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Single service -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="single-service">
+                        <div class="service-icon">
+                            <i class="fa fa-chart-line"></i>
+                        </div>
+                        <div class="service-content">
+                            <h5>Guaranteed Daily profit</h5>
+                            <p>One of our strongest advantages over competitors is that we provide insurance in investing funds and guarantee your profits from all sides..</p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+    <!--================Service Area end =================-->
+
+
+
+
+
+
+{% endblock %}

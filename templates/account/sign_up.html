@@ -1,0 +1,171 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+<html lang="en-us"><head>
+    <style type="text/css">
+      body{
+/*          background-image:url("{% static 'images/background.jpg' %}");
+          background-repeat:no-repeat;
+          background-size:cover;
+          background-position:center;
+          background-attachment: fixed;*/
+
+          }
+    </style>
+   <link rel= 'shortcut icon' href="{% static 'images/check3.jpg' %}">
+    <title>{{title}} | {{name}}</title>
+
+
+
+  
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{title}} | {{name}}</title>
+
+   
+
+</head>
+<body>
+{% block form %}
+    <section id="log">
+    <div class="container">
+    <div class="rowCo">
+    <div class="ctd">
+    <div align="middle">    
+    <img src="{% static 'images/mylogo.png' %}" width="175" height="100" style="border-width:5px;border-color: inherit;border-top-right-radius: 22px;border-bottom-left-radius: 22px;box-shadow: 5px 10px 5px 5px #888888;" class="img-responsive" >
+    </div>
+
+    <h1 class="ctdh1">{{name}}</h1>
+     <style type="text/css">
+         li{
+            list-style-type: none;
+         }
+     </style>
+    <div class="redirect text-center">
+    	Already have an account? <a href="/signin/">Login</a>
+    </div>
+   <!--  My horizontal rule -->
+   {% if not form.email.errors %}	
+	<div id="myhr"><hr style="height: 5px;background: rgb(0, 250, 154);"></div>
+	<div id="myhrnew" style="display: none"><hr style="height: 5px;background:#FF3030;"></div>
+	{% else %}
+	<div id="myhrnew"><hr style="height: 5px;background:#FF3030;"></div>
+	{% endif %}
+
+<!--  //My horizontal rule -->
+   <form method="post" id="mySignForm">
+                   {% csrf_token %}	
+                   {% if not form.email.errors %}			
+					<span style="font-family:italic;"  id="hellothere"></span>
+					<span style="font-family:italic;"  id="userthere"></span>
+					<span style="font-family:italic;"  id="minuser"></span>
+					<span style="font-family:italic;"  id="minuser2"></span>
+					<span style="font-family:italic;"  id="emailthere"></span>
+					<span style="font-family:italic;"  id="emailvalid"></span>
+					<span style="font-family:italic;"  id="passthere"></span>
+					<span style="font-family:italic;"  id="passmatch"></span>
+					<span style="font-family:italic;"  id="passlento"></span>
+					<span style="font-family:italic;"  id="conf_passthere"></span>
+
+					{% else %}
+					 <div class="alert alert-danger" role="alert"><i class="fa fa-warning" aria-hidden"true"></i>Email already exist></div>
+					{% endif %}
+                   {% if form.non_field_errors %}
+                   <div class="alert alert-danger" role="alert">
+                  <span style="font-family:italic;">{{form.non_field_errors}}</span>
+                   </div>
+                   {% endif %}
+
+      
+<!-- <marquee> -->
+					<!-- Input for username -->
+                   <label class="sr-only" for="exampleInputAmount"></label>
+                   <div class="input-group">
+                   <div class="input-group-addon"><i class="fa fa-user-o" aria-hidden="true"></i>
+                   </div>
+                   <input  class="input-one" id="myusername4reg" name="username" for="username" style="background-color:#00FA9A; color:white; font-weight: bold;"  placeholder="username" type="text" autocomplete="on">
+                   <div class="input-group-addon">
+                   <i class="fa fa fa-user-o fa-spin fa-3x fa-fw" id="OA" style="display: none; font-size: 14px;"></i>
+                   <span class="sr-only">Loading...</span>
+                   {% if  form.non_field_errors %}
+                   <i class="fa fa-minus-square" id="OB" aria-hidden="true" style="color: #B22222;"></i>
+                   {% endif %}
+                   </div>
+                   </div>
+
+
+
+					<!--// Input for username -->
+
+					<hr>
+
+					<!-- Input for email -->
+					
+                   
+                   <label class="sr-only" for="exampleInputAmount"></label>
+                   <div class="input-group">
+                   <div class="input-group-addon"><i class="fa fa-envelope-o" aria-hidden="true"></i>
+                   </div>
+                   <input  class="input-one" id="myemail4reg" name="email" for="email" style="background-color:#00FA9A; color:white; font-weight: bold;"  placeholder="email" type="text" autocomplete="on">
+                   <div class="input-group-addon">
+                   <i class="fa fa fa fa-envelope-o fa-spin fa-3x fa-fw" id="OC" style="display: none; font-size: 14px;"></i>
+                   <span class="sr-only">Loading...</span>
+                   {% if  form.non_field_errors %}
+                   <i class="fa fa-minus-square" id="OD" aria-hidden="true" style="color: #B22222;"></i>
+                   {% endif %}
+                   </div>
+                   </div>
+                   <!-- //Input for email -->
+						<hr>
+					<!-- Input for password -->
+
+					<label class="sr-only" for="exampleInputAmount"></label>
+                   <div class="input-group">
+                   <div class="input-group-addon"><i class="fa fa-key" aria-hidden="true"></i>
+                   </div>
+
+                   <input  class="input-one" id="mypassword4reg" name="password" for="password" style="background-color:#00FA9A; color:white; font-weight: bold;"  placeholder="password" type="password" autocomplete="on">
+                   <div class="input-group-addon">
+                   <i class="fa fa fa fa-key fa-spin fa-3x fa-fw" id="OE" style="display: none; font-size: 14px;"></i>
+                   <span class="sr-only">Loading...</span>
+                   {% if  form.non_field_errors %}
+                   <i class="fa fa-minus-square" id="OF" aria-hidden="true" style="color: #B22222;"></i>
+                   {% endif %}
+                   </div>
+                   </div>
+					<!-- //Input for password -->
+						<hr>
+					<!-- Input for conf_password -->
+					<label class="sr-only" for="exampleInputAmount"></label>
+                   <div class="input-group">
+                   <div class="input-group-addon"><i class="fa fa-key" aria-hidden="true"></i>
+                   </div>
+                   <input  class="input-one" id="myconfpass" name="verify_password" for="verify_password" style="background-color:#00FA9A; color:white; font-weight: bold;"  placeholder="confirm paswd" type="password" autocomplete="on">
+                   <div class="input-group-addon">
+                   <i class="fa fa fa-key fa-spin fa-3x fa-fw" id="OG" style="display: none; font-size: 14px;"></i>
+                   <span class="sr-only">Loading...</span>
+                   {% if  form.non_field_errors %}
+                   <i class="fa fa-minus-square" id="OH" aria-hidden="true" style="color: #B22222;"></i>
+                   {% endif %}
+                   </div>
+                   </div>
+					<!-- //Input for conf_password -->
+					
+	
+
+                   <button  class="logdiv top15 btn btn-lg btn-block" type="submit">Sign Up</button>
+
+       </form>
+
+    <p class="ctdp5" title="Click to sign in instead" onclick="window.location.href='/signin/'">I already have an account.</p>
+    </div></div></div></section>
+    <footer class="footer">
+     <div class="ctdp4 top1" style="color:black;font-weight:bold;">Copyright ® 2018 {{name}} all rights reserved.</div></footer>
+    </footer>
+{% endblock %}
+
+</body>
+</html>

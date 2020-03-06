@@ -1,0 +1,125 @@
+{% extends 'Administrator/base.html' %}
+{% load staticfiles %}
+
+
+{% block body %}
+<body>
+  <section id="container">
+    <!-- **********************************************************************************************************************************************************
+        TOP BAR CONTENT & NOTIFICATIONS
+        *********************************************************************************************************************************************************** -->
+    <!--header start-->
+{% include 'Administrator/header.html' %}
+    <!--header end-->
+    <!-- **********************************************************************************************************************************************************
+        MAIN SIDEBAR MENU
+        *********************************************************************************************************************************************************** -->
+    <!--sidebar start-->
+{% include 'Administrator/sidebar.html' %}
+    <!--sidebar end-->
+    <!-- **********************************************************************************************************************************************************
+        MAIN CONTENT
+        *********************************************************************************************************************************************************** -->
+    <!--main content start-->
+    <section id="main-content">
+      <section class="wrapper">
+        <div class="row">
+          <div class="col-lg-12 main-chart">
+
+
+
+          </div>
+          <!-- /col-lg-9 END SECTION MIDDLE -->
+          <!-- **********************************************************************************************************************************************************
+              RIGHT SIDEBAR CONTENT
+              *********************************************************************************************************************************************************** -->
+
+        </div>
+        <!-- /row -->
+
+
+<div class="row">
+
+
+<!--      <div class="col-md-3">-->
+<!--<div class="alert alert-success">-->
+<!--  <strong>Personal Information</strong>-->
+
+
+<!--</div>-->
+
+<!--<div class="well well-sm">  <strong>Username:</strong> {{request.user.username}} <br><hr>-->
+<!--<strong>Date Joined:</strong> {{request.user.date_joined}} <br><hr>-->
+<!--<strong>Last Access:</strong> {{request.user.last_login}} <br><hr>-->
+
+<!--</div>-->
+
+
+
+
+<!--  </div>-->
+
+
+
+
+
+              <div class="col-md-6 col-sm-12 mb">
+                <!-- REVENUE PANEL -->
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                <h3>My Investments</h3>
+                  {% for i in qs %}
+                    <div class="well well-sm well-success" style='background-color: green;color: white'> {{i.package}}</div>
+                    <p>Amount: {{i.amount}}</p>
+                    <p>Date: {{i.date}}</p>
+                    <hr>
+{% endfor %}
+
+
+
+
+                </div>
+              </div>
+
+
+
+</div>
+<!-- end of row -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </section>
+    </section>
+    <!--main content end-->
+
+  </section>
+  <!-- js placed at the end of the document so the pages load faster -->
+
+
+
+
+{% endblock body %}
+
+</body>
+
+</html>

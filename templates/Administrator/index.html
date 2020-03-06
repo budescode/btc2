@@ -1,0 +1,131 @@
+{% extends 'Administrator/base.html' %}
+{% load staticfiles %}
+
+
+{% block body %}
+<body>
+  <section id="container">
+    <!-- **********************************************************************************************************************************************************
+        TOP BAR CONTENT & NOTIFICATIONS
+        *********************************************************************************************************************************************************** -->
+    <!--header start-->
+{% include 'Administrator/header.html' %}
+    <!--header end-->
+    <!-- **********************************************************************************************************************************************************
+        MAIN SIDEBAR MENU
+        *********************************************************************************************************************************************************** -->
+    <!--sidebar start-->
+{% include 'Administrator/sidebar.html' %}
+    <!--sidebar end-->
+    <!-- **********************************************************************************************************************************************************
+        MAIN CONTENT
+        *********************************************************************************************************************************************************** -->
+    <!--main content start-->
+    <section id="main-content">
+      <section class="wrapper">
+        <div class="row">
+          <div class="col-lg-12 main-chart">
+
+
+
+          </div>
+          <!-- /col-lg-9 END SECTION MIDDLE -->
+          <!-- **********************************************************************************************************************************************************
+              RIGHT SIDEBAR CONTENT
+              *********************************************************************************************************************************************************** -->
+
+        </div>
+        <!-- /row -->
+
+
+<div class="row">
+
+
+      <div class="col-md-3">
+<div class="alert alert-success">
+  <strong>Personal Information</strong>
+
+
+</div>
+
+<div class="well well-sm">  <strong>Username:</strong> {{request.user.username}} <br><hr>
+<strong>Date Joined:</strong> {{request.user.date_joined}} <br><hr>
+<strong>Last Access:</strong> {{request.user.last_login}} <br><hr>
+
+</div>
+
+
+
+
+  </div>
+
+
+
+
+
+              <div class="col-md-6 col-sm-6 mb">
+                <!-- REVENUE PANEL -->
+                <div class="green-panel pn">
+                  <div class="green-header">
+                    <h5>REVENUE</h5>
+                  </div>
+                  <div class="chart mt">
+                    <div class="sparkline" data-type="line" data-resize="true" data-height="105" data-width="90%" data-line-width="1" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff" data-spot-radius="4" data-data="[200,135,667,333,526,996,564,123,890,464,655]"></div>
+                  </div>
+                  <p class="mt"><b>$ 17,980</b><br/>Month Income</p>
+                </div>
+              </div>
+
+
+
+
+
+  <div class="col-md-3">
+<div class="alert alert-success">
+  <strong>Account Overview</strong>
+</div>
+<div class="well well-sm">  <strong>Available Balance:</strong> $ {{qs.amount}}  <br><hr>
+<strong>Profit Margin:</strong> <br><hr>
+<strong>Active Investments:</strong> <br><hr>
+<strong>Pending Withdraw:</strong>$ {{qs.amount}} <br><hr>
+
+</div>
+
+
+  </div>
+
+</div>
+<!-- end of row -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </section>
+    </section>
+    <!--main content end-->
+
+  </section>
+  <!-- js placed at the end of the document so the pages load faster -->
+
+
+
+
+{% endblock body %}
+
+</body>
+
+</html>

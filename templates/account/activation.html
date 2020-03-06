@@ -1,0 +1,72 @@
+{% extends 'index.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block header %}
+{% include 'partials/header.html' %}
+ {% endblock header %}
+ {% block banner %}
+
+     	<!--/banner-->
+
+     	<div class="banner-inner">
+     	</div>
+     	<div class="container">   
+     	<hr>  	
+     	<ol class="breadcrumb">
+     		<li class="breadcrumb-item">
+     			<a href="{% url 'mainsec:index' %}">Home</a>
+     		</li>
+     		<li class="breadcrumb-item">Activate Account</li>
+     	</ol>
+     	<hr>
+     	</div>
+           <style type="text/css">
+               section#section{
+               background-image:url("{% static 'images/city-2199339_1280.jpg' %}");
+               color: whitesmoke;
+               background-repeat:no-repeat;
+               background-size:cover;
+               background-position:center;
+               background-attachment: fixed;
+               }
+           </style>
+     	<!--//banner-->
+     	<!--/main-->
+     	<section id="section" class="main-content-w3layouts-agileits">
+
+     		<h3 class="tittle" style="color: whitesmoke;">Account Activation</h3>
+     		<p class="sub text-center" style="color: whitesmoke;">Take a Bold Step</p>
+
+     		<div class="container">
+     			<div class="contact_grid_right">
+     			     <small>
+     			       <div align="middle"><small><img id="nice" src="{% static 'images/icons8-jetpack-joyride-48.png' %}"></div>
+     			        <div align="middle">&nbsp;<img id="nice" src="{% static 'images/icons8-facebook-like-24.png' %}"></small></div><br>
+                         <div align="middle" class="alert alert-success alert-dismissible" role="alert">
+                           <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                           <strong>viola!</strong> Your account is activated successfully!
+                         </div>
+                       </small>
+     				<h4 align="middle"><a href="/signin/"><span style="color: gold;">Login</span></a> now to view your account</h4>
+     			</div>
+     		</div>
+     	</section>
+     	<!--//main-->
+ {% endblock banner %}
+ {% block body %}
+		
+  
+ {% endblock body %}
+<!-- {{ form.media }} -->
+
+
+	<h4></h4>
+
+
+
+
+
+
+
+
+
