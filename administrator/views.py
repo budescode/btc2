@@ -44,7 +44,9 @@ def DepositView2(request):
 		qs = 'PROFESSIONAL PACKAGE 20% DAILY'
 		price = '$10000.00 - $50000.00'
 		profit = '$350.00'
-	return render(request, 'Administrator/deposit2.html', {'package':package, 'qs':qs, 'price':price,  'profit':profit})
+	else: 
+		return HttpResponse('select package')
+	return render(request, 'Administrator/depositnext.html', {'package':package, 'qs':qs, 'price':price,  'profit':profit})
 
 @login_required(login_url='/account/login/')
 def UserInvest(request):
@@ -104,7 +106,8 @@ def administrator(request):
 	# print (delta.days)
 	# print(ago, now)
 
-	return render(request, 'Administrator/index.html', {'qs':qs})
+	return render(request, 'Administrator/profile.html', {'qs':qs})
+	#return render(request, 'Administrator/index.html', {'qs':qs})
 
 
 

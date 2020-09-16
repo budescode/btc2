@@ -1,26 +1,31 @@
 {%  extends "home/base.html" %}
 {% block body %}
 <title>  Registration Successful | atreat4u</title>
-<div class="container">
-<div class="row">
-    <div class="col-md-6 col-sm-offset-3">
-        <hr>
-        <center><h1 style="font-family: 'black_jackregular';"><i class="fa fa-paper-plane" aria-hidden="true" style="color: orange"></i>&nbsp;Registration Successful</h1></center><br>
-        <hr>
-        <p>
-         <center><p>Click on the button below to login</p></center>
-<a href="{% url 'account:login' %}"><button type="button" class="btn btn-md btn-block" style="background-color: rgb(123, 197, 26); color: white;"><i class="fa fa-paper-plane-o" aria-hidden="true"></i>&nbsp;Login</button></a>
-    
-     </p>
-    <br>
-    <hr>
-</div>
- <div class="col-md-6">
- <br>
- <br>
- <br>
 
- </div>
-</div>
-</div>
+    <!--================Home Banner Area =================-->
+    <section class="home_banner_area">
+        <div class="banner_inner d-flex align-items-center">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 offset-md-3">
+                                
+                        <hr>
+                        <center><h1 style="font-family: 'black_jackregular';"><i class="fa fa-paper-plane" aria-hidden="true" style="color: white"></i>&nbsp;<span style="color:white">Registration Successful</span></h1></center><br>
+                        <hr>
+                        <p>
+                         <center><p>Click on the button below to login</p></center>
+                <a href="{% url 'account:login' %}"><button type="button" class="btn btn-md btn-block" style="background-color: rgb(123, 197, 26); color: white;"><i class="fa fa-paper-plane-o" aria-hidden="true"></i>&nbsp;Login</button></a>
+                     
+                     </p>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================End Home Banner Area =================-->
+
+
 {% endblock %}

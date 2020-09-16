@@ -1,0 +1,48 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>LegendaryTrade</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'administrator/css/index.css' %}">
+	<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+</head>
+<body>
+	<nav class="dashboard-nav">
+		<div class="navi"id="dashboard-nav">
+			<ul class="flex-center" id="side-ul">
+				<li><a href="{% url 'administrator:administrator' %}"><i class="fas fa-home"></i>Home</a></li>
+				<li><a href="{% url 'administrator:deposit' %}"><i class="fas fa-mobile-alt"></i>Deposit</a></li>
+				<!-- <li><a href="data.html"><i class="fas fa-mobile"></i></i>Buy Data</a></li> -->
+				<li><a href="{% url 'administrator:investment' %}"><i class="fas fa-credit-card"></i>Investment</a></li>
+				<!-- <li><a href="electricity.html"><i class="fas fa-lightbulb"></i></i>Electricity Bill</a></li>
+				<li><a href="result.html"><i class="fas fa-credit-card"></i>Exam Result Checker</a></li>
+				<li><a href="transaction.html"><i class="fas fa-exchange-alt"></i>Transactions</a></li> -->
+				<li><a href="{% url 'account:settings' %}"><i class="fas fa-user"></i>Settings</a></li>
+				<li><a href="{% url 'administrator:contact' %}"><i class="fas fa-handshake"></i>Support</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="profile-wrapper">
+		<div class="flex-center profile">
+			<div>
+				<i class="fas fa-bars" id="open-btn-p"></i>
+				<i class="fas fa-times" id="close-btn-p"></i>
+			</div>
+			<div class="account-name">
+				<h3>{{ qs.first_name }} {{qs.last_name}}</h3>
+				<!-- <p>N5,000 - Level: 1</p> -->
+			</div>
+			<a href="{% url 'home:home' %}"> <button>Logout</button></a>
+		</div>
+
+        {% block body %}
+
+        {% endblock body %}
+	</div>
+	<script type="text/javascript" src="{% static 'administrator/js/profile.js' %}"></script>
+</body>
+</html>

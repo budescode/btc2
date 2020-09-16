@@ -1,125 +1,58 @@
-{% extends 'Administrator/base.html' %}
+{% extends 'Administrator/base2.html' %}
 {% load staticfiles %}
 
 
 {% block body %}
-<body>
-  <section id="container">
-    <!-- **********************************************************************************************************************************************************
-        TOP BAR CONTENT & NOTIFICATIONS
-        *********************************************************************************************************************************************************** -->
-    <!--header start-->
-{% include 'Administrator/header.html' %}
-    <!--header end-->
-    <!-- **********************************************************************************************************************************************************
-        MAIN SIDEBAR MENU
-        *********************************************************************************************************************************************************** -->
-    <!--sidebar start-->
-{% include 'Administrator/sidebar.html' %}
-    <!--sidebar end-->
-    <!-- **********************************************************************************************************************************************************
-        MAIN CONTENT
-        *********************************************************************************************************************************************************** -->
-    <!--main content start-->
-    <section id="main-content">
-      <section class="wrapper">
-        <div class="row">
-          <div class="col-lg-12 main-chart">
 
 
 
+
+  <div class="flex-center profile-container">
+    
+    <div class="flex-center divs col-cen wallet">
+      
+      <div class="flex-center wallet-div">
+        
+ 
+      
+      {% for i in qs %}
+        <div class="wallet-container w1 flex-center">
+          <div class="wallet-text" style="font-size: 15px;">
+            <p class="">Amount: {{i.amount}} </p>
+            <p>Date: {{i.date}}</p>
+           
           </div>
-          <!-- /col-lg-9 END SECTION MIDDLE -->
-          <!-- **********************************************************************************************************************************************************
-              RIGHT SIDEBAR CONTENT
-              *********************************************************************************************************************************************************** -->
-
         </div>
-        <!-- /row -->
+        {% endfor %}   
+        <!-- <div class="wallet-container w2 flex-center">
+          <div class="wallet-text">
+            <p class="">$1000.00 - $3999.00</p>
+            <p>BUSINESS PACKAGE 15% DAILY</p>
+          </div>
+        </div>
+         <div class="wallet-container w3 flex-center">
+          <div class="wallet-text">
+            <p class="">$10000.00 - $50000.00</p>
+            <p>PROFESSIONAL PACKAGE 20% DAILY</p>
+          </div>
+        </div>  -->
+        <!-- <div class="wallet-container w4 flex-center">
+          <div class="wallet-text">
+            <p class="wallet-amount">₦1,000</p>
+            <p>Affiliate Bonus</p>
+          </div>
+        </div>
+        <div class="wallet-container w5 flex-center">
+          <div class="wallet-text">
+            <p class="wallet-amount">₦1,000</p>
+            <p>VTU wallet</p>
+          </div>
+        </div>  -->
+      </div>
+    </div>
+    
 
 
-<div class="row">
-
-
-<!--      <div class="col-md-3">-->
-<!--<div class="alert alert-success">-->
-<!--  <strong>Personal Information</strong>-->
-
-
-<!--</div>-->
-
-<!--<div class="well well-sm">  <strong>Username:</strong> {{request.user.username}} <br><hr>-->
-<!--<strong>Date Joined:</strong> {{request.user.date_joined}} <br><hr>-->
-<!--<strong>Last Access:</strong> {{request.user.last_login}} <br><hr>-->
-
-<!--</div>-->
-
-
-
-
-<!--  </div>-->
-
-
-
-
-
-              <div class="col-md-6 col-sm-12 mb">
-                <!-- REVENUE PANEL -->
-                {% if messages %}
-                <ul class="messages">
-                    {% for message in messages %}
-                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-                    {% endfor %}
-                </ul>
-                {% endif %}
-                <h3>My Investments</h3>
-                  {% for i in qs %}
-                    <div class="well well-sm well-success" style='background-color: green;color: white'> {{i.package}}</div>
-                    <p>Amount: {{i.amount}}</p>
-                    <p>Date: {{i.date}}</p>
-                    <hr>
-{% endfor %}
-
-
-
-
-                </div>
-              </div>
-
-
-
-</div>
-<!-- end of row -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </section>
-    </section>
-    <!--main content end-->
-
-  </section>
-  <!-- js placed at the end of the document so the pages load faster -->
-
-
-
-
+  </div>
 {% endblock body %}
 
-</body>
-
-</html>

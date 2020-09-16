@@ -1,119 +1,22 @@
-{% extends 'Administrator/base.html' %}
+{% extends 'Administrator/base2.html' %}
 {% load staticfiles %}
 
 
 {% block body %}
-<body>
-  <section id="container">
-    <!-- **********************************************************************************************************************************************************
-        TOP BAR CONTENT & NOTIFICATIONS
-        *********************************************************************************************************************************************************** -->
-    <!--header start-->
-{% include 'Administrator/header.html' %}
-    <!--header end-->
-    <!-- **********************************************************************************************************************************************************
-        MAIN SIDEBAR MENU
-        *********************************************************************************************************************************************************** -->
-    <!--sidebar start-->
-{% include 'Administrator/sidebar.html' %}
-    <!--sidebar end-->
-    <!-- **********************************************************************************************************************************************************
-        MAIN CONTENT
-        *********************************************************************************************************************************************************** -->
-    <!--main content start-->
-    <section id="main-content">
-      <section class="wrapper">
-        <div class="row">
-          <div class="col-lg-12 main-chart">
+<div class="flex-center profile-container">
+ 
+  <div class="flex-center divs  transactions">
 
+    <div class="">
+      <h3>Your request has been received</h3>
+      <div class="flex-center platform">
 
+        <div class="well well-lg well-success"> Send payment to: <b>1AwfqP6VMZFvxvnLjrwyk9L3LXCWais9X6</b></div>      
+      </div>
 
-          </div>
-          <!-- /col-lg-9 END SECTION MIDDLE -->
-          <!-- **********************************************************************************************************************************************************
-              RIGHT SIDEBAR CONTENT
-              *********************************************************************************************************************************************************** -->
-
-        </div>
-        <!-- /row -->
-
-
-<div class="row">
-
-
-
-              <div class="col-md-6 col-sm-12 mb">
-                <!-- REVENUE PANEL -->
-                {% if messages %}
-                <ul class="messages">
-                    {% for message in messages %}
-                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-                    {% endfor %}
-                </ul>
-                {% endif %}
-
-                    <div class="well well-sm well-success" style=''> Your request has been received</div>
-<div class="well well-lg well-success" style='background-color:green; color:white;'> Send payment to: <b>1AwfqP6VMZFvxvnLjrwyk9L3LXCWais9X6</b></div>
-
-
-
-
-
-
-
-
-
-
-
-
-<!--  <div class="col-md-3">-->
-<!--<div class="alert alert-success">-->
-<!--  <strong>Account Overview</strong>-->
-<!--</div>-->
-<!--<div class="well well-sm">  <strong>Available Balance:</strong>  <br><hr>-->
-<!--<strong>Profit Margin:</strong> <br><hr>-->
-<!--<strong>Active Investments:</strong> <br><hr>-->
-<!--<strong>Pending Withdraw:</strong> <br><hr>-->
-
-<!--</div>-->
-
-
-<!--  </div>-->
-
+  
+    </div>
+  </div>
 </div>
-<!-- end of row -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </section>
-    </section>
-    <!--main content end-->
-
-  </section>
-  <!-- js placed at the end of the document so the pages load faster -->
-
-
-<script>
-    document.querySelector('#package').value = '{{package}}'
-</script>
-
 {% endblock body %}
 
-</body>
-
-</html>

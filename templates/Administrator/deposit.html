@@ -1,164 +1,65 @@
-{% extends 'Administrator/base.html' %}
+{% extends 'Administrator/base2.html' %}
 {% load staticfiles %}
 
 
 {% block body %}
-<body>
-  <section id="container">
-    <!-- **********************************************************************************************************************************************************
-        TOP BAR CONTENT & NOTIFICATIONS
-        *********************************************************************************************************************************************************** -->
-    <!--header start-->
-{% include 'Administrator/header.html' %}
-    <!--header end-->
-    <!-- **********************************************************************************************************************************************************
-        MAIN SIDEBAR MENU
-        *********************************************************************************************************************************************************** -->
-    <!--sidebar start-->
-{% include 'Administrator/sidebar.html' %}
-    <!--sidebar end-->
-    <!-- **********************************************************************************************************************************************************
-        MAIN CONTENT
-        *********************************************************************************************************************************************************** -->
-    <!--main content start-->
-    <section id="main-content">
-      <section class="wrapper">
-        <div class="row">
-          <div class="col-lg-12 main-chart">
 
 
 
+
+  <div class="flex-center profile-container">
+    <div class="flex-center divs col-cen wallet">
+      <div class="flex-center wallet-div">
+        <div class="wallet-container w1 flex-center">
+          <div class="wallet-text">
+            <p class="">$500.00 - $999.00 </p>
+            <p>BASIC PACKAGE 30% DAILY</p>
           </div>
-          <!-- /col-lg-9 END SECTION MIDDLE -->
-          <!-- **********************************************************************************************************************************************************
-              RIGHT SIDEBAR CONTENT
-              *********************************************************************************************************************************************************** -->
-
         </div>
-        <!-- /row -->
+        <div class="wallet-container w2 flex-center">
+          <div class="wallet-text">
+            <p class="">$1000.00 - $3999.00</p>
+            <p>BUSINESS PACKAGE 15% DAILY</p>
+          </div>
+        </div>
+         <div class="wallet-container w3 flex-center">
+          <div class="wallet-text">
+            <p class="">$10000.00 - $50000.00</p>
+            <p>PROFESSIONAL PACKAGE 20% DAILY</p>
+          </div>
+        </div> 
+        <!-- <div class="wallet-container w4 flex-center">
+          <div class="wallet-text">
+            <p class="wallet-amount">₦1,000</p>
+            <p>Affiliate Bonus</p>
+          </div>
+        </div>
+        <div class="wallet-container w5 flex-center">
+          <div class="wallet-text">
+            <p class="wallet-amount">₦1,000</p>
+            <p>VTU wallet</p>
+          </div>
+        </div>  -->
+      </div>
+    </div>
+    
+    <div class="divs col-cen recharge">
+      <div class="flex-center recharge-div">
+        <form method='POST' action="{% url 'administrator:depositnext' %}"> {% csrf_token %}
+          <div class="container">
+            <label>Select Plan:</label>
+            <select id="sel1" name='package'>
+              <option>BASIC PACKAGE 30% DAILY</option>
+              <option>BUSINESS PACKAGE 15% DAILY</option>
+              <option>PROFESSIONAL PACKAGE 20% DAILY</option>
+            </select>
+          </div>
 
+          <button type="submit">Next</button>
+        </form>
+      </div>
+    </div>
 
-<div class="row">
-
-
-<!--      <div class="col-md-3">-->
-<!--<div class="alert alert-success">-->
-<!--  <strong>Personal Information</strong>-->
-
-
-<!--</div>-->
-
-<!--<div class="well well-sm">  <strong>Username:</strong> {{request.user.username}} <br><hr>-->
-<!--<strong>Date Joined:</strong> {{request.user.date_joined}} <br><hr>-->
-<!--<strong>Last Access:</strong> {{request.user.last_login}} <br><hr>-->
-
-<!--</div>-->
-
-
-
-
-<!--  </div>-->
-
-
-
-
-
-              <div class="col-md-6 col-sm-12 mb">
-                <!-- REVENUE PANEL -->
-                {% if messages %}
-                <ul class="messages">
-                    {% for message in messages %}
-                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-                    {% endfor %}
-                </ul>
-                {% endif %}
-
-                    <div class="well well-sm well-success" style=''> Make a deposit</div>
-                    <div class="well well-lg well-success" style='background-color:green; color:white;'> BASIC PACKAGE 30% DAILY <span class='pull-right'>$500.00 - $999.00 <br>
-                    DAILY PROFIT(%):$140.00</span></div>
-
-<div class="well well-lg well-success" style='background-color:green; color:white;'> BUSINESS PACKAGE 15% DAILY <span class='pull-right'>$1000.00 - $3999.00 <br>
-DAILY PROFIT(%):$210.00</span></div>
-
-<div class="well well-lg well-success" style='background-color:green; color:white;'> PROFESSIONAL PACKAGE 20% DAILY <span class='pull-right'>$10000.00 - $50000.00 <br>
-DAILY PROFIT(%):$350.00</span></div>
-
-
-<div>
-    <span>Investment Plan</span>
-    <hr>
-<form method='POST' action='{% url 'administrator:depositnext' %}'> {% csrf_token %}
-    <div class="form-group">
-  <label for="sel1">Select Plan:</label>
-  <select class="form-control" id="sel1" name='package'>
-    <option>BASIC PACKAGE 30% DAILY</option>
-    <option>BUSINESS PACKAGE 15% DAILY</option>
-    <option>PROFESSIONAL PACKAGE 20% DAILY</option>
-
-  </select>
-  <br>
-  <input type='submit' class='btn btn-primary' value='Next'>
-</div>
-</div>
-</form>
-
-
-
-                </div>
-
-                </div>
-              </div>
-
-
-
-
-
-<!--  <div class="col-md-3">-->
-<!--<div class="alert alert-success">-->
-<!--  <strong>Account Overview</strong>-->
-<!--</div>-->
-<!--<div class="well well-sm">  <strong>Available Balance:</strong>  <br><hr>-->
-<!--<strong>Profit Margin:</strong> <br><hr>-->
-<!--<strong>Active Investments:</strong> <br><hr>-->
-<!--<strong>Pending Withdraw:</strong> <br><hr>-->
-
-<!--</div>-->
-
-
-<!--  </div>-->
-
-</div>
-<!-- end of row -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </section>
-    </section>
-    <!--main content end-->
-
-  </section>
-  <!-- js placed at the end of the document so the pages load faster -->
-
-
-
-
+  </div>
 {% endblock body %}
 
-</body>
-
-</html>

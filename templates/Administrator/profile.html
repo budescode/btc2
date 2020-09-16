@@ -1,0 +1,62 @@
+{% extends 'Administrator/base2.html' %}
+{% load staticfiles %}
+{% block body %}
+
+		<div class="flex-center profile-container">
+			<div class="flex-center divs col-cen wallet">
+				<div class="flex-center wallet-div">
+					<div class="wallet-container w1 flex-center">
+						<div class="wallet-text">
+							<p class="wallet-amount"> $ {{qs.amount}} </p>
+							<p>Available Balance</p>
+						</div>
+					</div>
+					<div class="wallet-container w2 flex-center">
+						<div class="wallet-text">
+							<p class="wallet-amount">$ {{qs.amount}}</p>
+							<p>Pending Withdraw</p>
+						</div>
+					</div>
+					<!-- <div class="wallet-container w3 flex-center">
+						<div class="wallet-text">
+							<p class="wallet-amount">₦500</p>
+							<p>Leader/VTU Commission</p>
+						</div>
+					</div>
+					<div class="wallet-container w4 flex-center">
+						<div class="wallet-text">
+							<p class="wallet-amount">₦1,000</p>
+							<p>Affiliate Bonus</p>
+						</div>
+					</div>
+					<div class="wallet-container w5 flex-center">
+						<div class="wallet-text">
+							<p class="wallet-amount">₦1,000</p>
+							<p>VTU wallet</p>
+						</div>
+					</div> -->
+				</div>
+			</div>
+			<div class="flex-center divs  transactions">
+				<!-- <h1 class="h1h"><i class="fas fa-exchange-alt"></i>Transactions</h1> -->
+				<div class="flex-center transaction-div">
+					<h3>Platform Statistics:</h3>
+					<div class="flex-center platform">
+						<p class="ugu">FullName: <span>{{qs.first_name}} {{qs.last_name}}</span></p>
+						<p class="ugu">Email: <span>{{ request.user.email }}</span></p>
+						<p class="ugu">Date Joined: <span>{{request.user.date_joined}}</span></p>
+						<p class="ugu">Last Access: <span>{{request.user.last_login}}</span></p>
+						
+					</div>
+					<div class="flex-center platform">
+						<!-- <p class="idi">Today: ₦1,000</p> -->
+						<p class="idi">{{qs.amount}}</p>
+					</div>
+					<div class="platform-btn">
+						<button class="flex-center">Withdraw<i class="fas fa-arrow-right"></i></button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+{% endblock body %}
